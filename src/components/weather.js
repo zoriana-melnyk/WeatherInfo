@@ -1,7 +1,7 @@
 import React from "react";
 
 const Weather = props =>( 
-    <div>
+    <div className="infoWeath">
         {
             props.city &&
             <div>
@@ -11,7 +11,7 @@ const Weather = props =>(
                     <p>Sunset: {new Date(props.sunset * 1000).toLocaleTimeString('en-IN')}</p>
                 </div>
         }
-        <p>{props.error}</p>
+        <p className="error">{props.error}</p>
     </div>
 );
 export default Weather;
