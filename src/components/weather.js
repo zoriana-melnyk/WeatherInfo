@@ -1,17 +1,17 @@
 import React from "react";
 
-const Weather = props =>( 
+const Weather = ({ weather: { city, country, temp, sunrise, sunset, error } }) =>( 
     <div className="infoWeath">
         {
-            props.city &&
+            city &&
             <div>
-                    <p>Location: {props.city}, {props.country}</p>
-                    <p>Tempherature: {props.temp}</p>
-                    <p>Sunrise: {new Date(props.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
-                    <p>Sunset: {new Date(props.sunset * 1000).toLocaleTimeString('en-IN')}</p>
+                    <p>Location: {city}, {country}</p>
+                    <p>Tempherature: {temp}</p>
+                    <p>Sunrise: {new Date(sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+                    <p>Sunset: {new Date(sunset * 1000).toLocaleTimeString('en-IN')}</p>
                 </div>
         }
-        <p className="error">{props.error}</p>
+        <p className="error">{error}</p>
     </div>
 );
 export default Weather;
